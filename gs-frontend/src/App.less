@@ -1,0 +1,48 @@
+@import './vars.less';
+
+.clickable {
+    cursor: pointer;
+}
+
+.game-logo {
+    height: 1em;
+    transform: translateY(-.2em) scale(2.2);
+    margin-right: 1em;
+    margin-left: .5em;
+}
+
+.main-container {
+    max-width: @max-body-width;
+    margin: 0 auto;
+    padding-top: 58px + 12px;
+    padding-left: @body-padding;
+    padding-right: @body-padding;
+}
+
+.slim-container {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.result-page-container {
+    padding-top: 3em;
+}
+
+.capped-text {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 2em;
+    line-height: 2em;
+    vertical-align: -.6em;
+}
+
+// fix ... menu hard to click
+.ant-menu-overflow-item-rest {
+    padding: 0 !important;
+
+    >.ant-menu-submenu-title {
+        padding: 0 20px !important;
+    }
+}

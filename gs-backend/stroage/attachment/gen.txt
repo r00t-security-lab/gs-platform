@@ -1,0 +1,4 @@
+origin=0123456789abcdefghijklmnopqrstuvwxyz
+change=xh7sm1vj3gfqdciea98wpknt64lyur2z0ob5
+
+target=!_sii0iituymnajgx1h!gnaw1{x!e30}rniy

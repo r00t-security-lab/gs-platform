@@ -1,0 +1,204 @@
+@import '../vars.less';
+
+@single-row-breakpoint: 765px;
+@small-multi-row-breakpoint: 1020px;
+
+.portal-container {
+    display: flex;
+    flex-direction: row;
+
+    .portal-sidebar {
+        flex: 0 0 390px;
+        @media (max-width: @small-multi-row-breakpoint) {
+            flex: 0 0 280px;
+        }
+    }
+    .portal-main {
+        flex: 1 1;
+        margin-left: 18px;
+        @media (max-width: @small-multi-row-breakpoint) {
+            margin-left: 12px;
+        }
+    }
+
+    @media (max-width: @single-row-breakpoint) {
+        display: block;
+
+        .portal-sidebar {
+            margin-bottom: 24px;
+        }
+        .portal-main {
+            margin-left: unset;
+        }
+    }
+}
+
+.portal-main .announcement {
+    .ant-card {
+        background-color: #fafbff !important;
+        border-color: #b0d8e0 !important;
+
+        .ant-card-head {
+            background-color: #ebf6ff !important;
+        }
+    }
+}
+
+.portal-headline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-left: 15px;
+}
+
+.portal-primary-btn {
+    margin-bottom: 12px;
+}
+
+.portal-user-info {
+    background-color: #f0f0f0;
+    border-radius: @border-radius-base;
+    border: 1px solid @card-border-color;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f6f6f6;
+    }
+
+    margin-bottom: 12px;
+    padding: 6px 12px;
+
+    .portal-user-info-status {
+        font-size: 1.1em;
+    }
+    .portal-user-info-cat {
+        font-size: .85em;
+    }
+}
+
+.portal-chall-list {
+    .label-for-score {
+        display: none;
+    }
+
+    .portal-chall-row {
+        display: flex;
+        flex-direction: row;
+        padding: 8px 0;
+
+        @media (min-width: @single-row-breakpoint+1) and (max-width: @small-multi-row-breakpoint) {
+            display: block;
+
+            &.portal-chall-header .portal-chall-col-score {
+                display: none;
+            }
+        }
+
+        border-top: 1px solid @card-border-color;
+        border-left: 1px solid @card-border-color;
+        border-right: 1px solid @card-border-color;
+
+        &:first-child {
+            border-top-left-radius: @border-radius-base;
+            border-top-right-radius: @border-radius-base;
+        }
+        &:last-child {
+            border-bottom-left-radius: @border-radius-base;
+            border-bottom-right-radius: @border-radius-base;
+            border-bottom: 1px solid @card-border-color;
+        }
+
+        &:not(.portal-chall-header) {
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f9f9f9;
+            }
+
+            &.portal-chall-row-active {
+                cursor: unset;
+                background-color: #f0f3ff;
+            }
+        }
+
+        &.portal-chall-row-flag {
+            padding: 2px 0;
+
+            .portal-chall-col-title {
+                padding-left: 21px;
+            }
+
+            @media (min-width: @single-row-breakpoint+1) and (max-width: @small-multi-row-breakpoint) {
+                .portal-chall-col-score {
+                    padding-left: 21px;
+                }
+            }
+        }
+    }
+    .portal-chall-header {
+        background-color: #f0f0f0;
+        font-weight: bold;
+    }
+
+    .portal-chall-col-title {
+        padding-left: 8px;
+        flex: 1 1;
+    }
+    .portal-chall-col-score {
+        flex: 0 0 85px;
+        padding-left: 2px;
+
+        @media (min-width: @single-row-breakpoint+1) and (max-width: @small-multi-row-breakpoint) {
+            padding-left: 8px;
+            margin-top: -2px;
+            font-size: small;
+            opacity: .8;
+
+            .label-for-score {
+                display: initial;
+            }
+        }
+    }
+
+    .portal-chall-category-badge {
+        float: right;
+
+        .ant-tag {
+            vertical-align: text-bottom;
+            border-radius: 1em;
+        }
+    }
+
+    .portal-chall-caret {
+        display: inline-block;
+        transform: scale(.75);
+        opacity: .6;
+        margin-left: .25em;
+    }
+
+    .item-discount {
+        color: darkred;
+        font-size: small;
+    }
+}
+
+.challenge-body {
+    h1 {
+        margin-bottom: 0;
+    }
+    .challenge-stat {
+        font-size: small;
+        margin-top: .25rem;
+        margin-bottom: 0;
+    }
+    .challenge-action {
+        font-weight: bold;
+        margin-bottom: .5em;
+    }
+}
+
+.landing-login-form {
+    .fancy-card-mixin(#f0f0f0);
+}

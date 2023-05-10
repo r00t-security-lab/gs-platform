@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  gs-backend:
+    build: ./gs-backend
+    container_name: gs-backend
+    hostname: gs-backend
+    restart: always
+    environment:
+      - FLASK_APP=/gs-backend/src/admin/app
+    volumes:
+      - ./gs-backend:/gs-backend
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+      - "5000:5000"
+    depends_on:
+      - mysql
+  
+  mysql:
+    image: mysql
+    container_name: mysql
+    hostname: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password --mysqlx=0
+    # ports:
+    #   - 33306:3306
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_HOST=0.0.0.0 
+      - MYSQL_PORT=3306 
+      - MYSQL_DATABASE=dev
+      - MYSQL_USER=dev
+      - MYSQL_PASSWORD=dev
+      - MYSQL_ROOT_PASSWORD=dev

@@ -1,0 +1,3 @@
+cipher:jkbattbmbpklal
+key1:Miraidon
+key2:Regieleki
